@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <title>Weather App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+    <div class="container">
+        <form id="search-form">
+            <input type="text"
+    placeholder="Enter your city" 
+   autocomplete="off" autofocus="on"
+    id="search-text-input"/>
+    <input type="submit"  value="search" id="now"/>
+        </form>
+        
+
+        <h1>
+            <span class="city">
+                Cape Town
+            </span>
+        </h1>
+
+        <div class="row">
+            <div class="col-6">
+                <ul>
+                    <li>
+                        Last Updated: <h6>Monday 12:25</h6>
+                        
+                    </li>
+                    <li> 
+                        <span class="des">
+                            Broken clouds
+                        </span>
+                        
+                    </li>
+                    <li>
+                        <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-night.png" alt="cloudy" height="50px"> <span class="TSemperature">12  </span>℃ | ℉
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6">
+                <ul>
+                    <li>
+                        Humidity:
+                        <span id="humidity">50</span>
+                        %
+                    </li>
+                    <li>
+                        Wind: 
+                        <sapn id="Wind">24</sapn>
+                        km/h
+                    </li>
+                    <li>
+                        Precipitation:
+                        <span id="precipitation">43</span>
+                        %
+                    </li>
+                </ul>
+            </div>
+        </div>
+       
+    </div>
+    <small>
+        <a href="https://github.com/Tshegofatsonline1/Weather-search.git">Open-Source coded</a> by Tshegofatso Magome
+    </small>
+
+    <script src="src/index.js"></script>
+</body>
+</html>
+        
