@@ -1,13 +1,21 @@
 // Adding Current Time //
-let now = new Date();
-let date = now.getDate();
-let hours = now.getHours();
-let minutes = now.getMinutes();
-let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
-let day = days[now.getDay()];
+function formatDate (timestamp) {
+let date = new Date(timestamp);
+let hours = date.getHours();
+if (hours < 10) {
+   hours = `0${hours}`;
+}
+let minutes = date.getMinutes();
+if (minutes < 10) {
+   minutes = `0${minutes}`;
+}
 
-let h6 = document.querySelector("h6");
-h6.innerHTML = `${day}  ${hours}:${minutes}`;
+let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+let day = days[date.getDay()];
+
+return `${day}  ${hours}:${minutes}`;
+
+}
 
 // Search Engine //
   
@@ -18,13 +26,16 @@ h6.innerHTML = `${day}  ${hours}:${minutes}`;
    let humidityElement = document.querySelector(".humidity");
    let windElement = document.querySelector(".wind");
    let iconElement = document.querySelector(".icon");
+   let dateElement = document.querySelector(".date");
 
    cityElement.innerHTML = (response.data.city);
    temperatureElement.innerHTML = Math.round(response.data.temperature.current);
    desctiptionElement.innerHTML = response.data.condition.description;
    humidityElement.innerHTML = response.data.temperature.humidity;
    windElement.innerHTML = Math.round(response.data.wind.speed);
-   iconElement.innerHTML = response.data.condition.icon_url;
+   //iconElement.innerHTML = response.data.condition.icon_url;//
+   dateElement.innerHTML = formatDate(response.data.time * 1000);
+
 
  }
 
