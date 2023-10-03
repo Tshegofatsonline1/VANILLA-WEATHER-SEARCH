@@ -12,28 +12,25 @@ h6.innerHTML = `${day}  ${hours}:${minutes}`;
 // Search Engine //
   
  function showTemperature (response) {
-    document.querySelector(".city").innerHTML = response.city;
-    document.querySelector(".des").innerHTML = response.condition.description;
-    document.querySelector(".humidity").innerHTML = Math.round(response.temperature.humidity);
-    document.querySelector(".wind").innerHTML = Math.round(response.wind.speed);
-    
+   let cityElement = document.querySelector(".city");
+   let temperatureElement = document.querySelector(".temperature");
+   let desctiptionElement = document.querySelector(".description");
+   let humidityElement = document.querySelector(".humidity");
+   let windElement = document.querySelector(".wind");
+   let iconElement = document.querySelector(".icon");
+
+   cityElement.innerHTML = (response.data.city);
+   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
+   desctiptionElement.innerHTML = response.data.condition.description;
+   humidityElement.innerHTML = response.data.temperature.humidity;
+   windElement.innerHTML = Math.round(response.data.wind.speed);
+   iconElement.innerHTML = response.data.condition.icon_url;
+
  }
 
-function findCity (city) {
 
  let apiKey = "7affbfo33ct9024044b5070bf6ca420b";
- let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+ let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Lisbon&key=${apiKey}&units=metric`;
  axios.get(apiUrl).then(showTemperature);
-}
 
-function printSubmit(event) {
 
- event.preventDefault();
- let city = document.querySelector("#search-text-input").value;
- findCity(city);
-}
-
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", printSubmit);
-
-findCity("Cape Town");
