@@ -43,8 +43,6 @@ return `${day}  ${hours}:${minutes}`;
    let apiKey = "7affbfo33ct9024044b5070bf6ca420b";
    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
    axios.get(apiUrl).then(showTemperature);
-
-
  }
 
  function handleSubmit(event) {
@@ -53,8 +51,6 @@ return `${day}  ${hours}:${minutes}`;
    search(cityInputElement.value);
    
  }
-
- 
 
  let form = document.querySelector("#search-form");
  form.addEventListener("submit", handleSubmit);

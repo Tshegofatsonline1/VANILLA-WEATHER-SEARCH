@@ -32,3 +32,6 @@ small {
     font-size: xx-large;
     margin-bottom: 50px;
 }
+#fahrenheight-link {
+    text-decoration: none;
+}
