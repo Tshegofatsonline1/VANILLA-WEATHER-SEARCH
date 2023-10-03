@@ -33,7 +33,7 @@ return `${day}  ${hours}:${minutes}`;
    desctiptionElement.innerHTML = response.data.condition.description;
    humidityElement.innerHTML = response.data.temperature.humidity;
    windElement.innerHTML = Math.round(response.data.wind.speed);
-   //iconElement.innerHTML = response.data.condition.icon_url;//
+   iconElement.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
    dateElement.innerHTML = formatDate(response.data.time * 1000);
 
 
@@ -41,7 +41,7 @@ return `${day}  ${hours}:${minutes}`;
 
 
  let apiKey = "7affbfo33ct9024044b5070bf6ca420b";
- let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Lisbon&key=${apiKey}&units=metric`;
+ let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Sydney&key=${apiKey}&units=metric`;
  axios.get(apiUrl).then(showTemperature);
 
 
