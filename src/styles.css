@@ -34,4 +34,17 @@ small {
 }
 #fahrenheight-link {
     text-decoration: none;
+    font-size: small;
+}   
+
+#celsius-link {
+    text-decoration: none;
+    font-size: small;
+    color: black;
+    margin-top: 20px;
+}
+
+.units {
+
+    top: -34px;
 }
