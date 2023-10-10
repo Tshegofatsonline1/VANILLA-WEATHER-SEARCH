@@ -17,6 +17,28 @@ return `${day}  ${hours}:${minutes}`;
 
 }
 
+function showForecast {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = "";
+  forecastHTML = `
+  <div class="row">
+  <div class="col-6">
+      <div class="day">Thurs</div>
+      <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png" width="42">
+      <span class="forecast-temperature-max">23°</span>
+      <span class="forecast-temperature-min">13°</span>
+  </div>
+</div>
+  
+  
+  
+  `;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+
+
 // Show Temperature //
   
  function showTemperature (response) {
@@ -27,6 +49,8 @@ return `${day}  ${hours}:${minutes}`;
    let windElement = document.querySelector(".wind");
    let iconElement = document.querySelector(".icon");
    let dateElement = document.querySelector(".date");
+
+
 
    celsiusTemperature = response.data.temperature.current;
 
@@ -69,6 +93,8 @@ temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 let = celsiusTemperature = null;
 
+
+
  let form = document.querySelector("#search-form");
  form.addEventListener("submit", handleSubmit);
 
@@ -79,4 +105,5 @@ let = celsiusTemperature = null;
 celsiusLink.addEventListener("click", showCelsiusTemperature);
 
  search("New York");
+ showForecast();
 
