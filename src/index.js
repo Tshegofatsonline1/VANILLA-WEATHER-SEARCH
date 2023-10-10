@@ -16,25 +16,30 @@ let day = days[date.getDay()];
 return `${day}  ${hours}:${minutes}`;
 
 }
-
-function showForecast {
+//WEATHER FORECAST//
+function showForecast() {
   let forecastElement = document.querySelector("#forecast");
 
-  let forecastHTML = "";
-  forecastHTML = `
-  <div class="row">
-  <div class="col-6">
-      <div class="day">Thurs</div>
-      <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png" width="42">
-      <span class="forecast-temperature-max">23°</span>
-      <span class="forecast-temperature-min">13°</span>
-  </div>
-</div>
+  let forecastHTML = `<div class="row">`;
+  let days = ["Tues", "Wed", "Thu", "Fri"];
+  days.forEach(function (day){
+
+    forecastHTML = 
+    forecastHTML + 
+    `
+    <div class="col-2">
+        <div class="day">${day}</div>
+        <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png" width="42"><br>
+        <span class="forecast-temperature-max">23°</span>
+        <span class="forecast-temperature-min">13°</span>
+    </div>
   
-  
-  
-  `;
+    `;
+    
+  });
+  forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+
 }
 
 
